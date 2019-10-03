@@ -4,7 +4,6 @@ const Question = props => {
   if (props.currentQuestion !== props.count) {
     return null;
   }
-
   return (
     <div className="wrapper">
       <div className="item">
@@ -15,7 +14,7 @@ const Question = props => {
           id={`${props.name}-A`}
           value="A"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-A`}>His work</label>
+        <label htmlFor={`${props.name}-A`}>{props.quizquestions[0].content}</label>
       </div>
       <div className="item">
         <input type='radio'
@@ -23,7 +22,7 @@ const Question = props => {
           id={`${props.name}-B`}
           value="B"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-B`}>His family</label>
+        <label htmlFor={`${props.name}-B`}>{props.quizquestions[1].content}</label>
       </div>
       <div className="item">
         <input type='radio'
@@ -31,7 +30,7 @@ const Question = props => {
           id={`${props.name}-C`}
           value="C"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-C`}>His Children</label>
+        <label htmlFor={`${props.name}-C`}>{props.quizquestions[2].content}</label>
       </div>
     </div>
   )

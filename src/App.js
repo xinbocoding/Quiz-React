@@ -1,9 +1,9 @@
 import React from 'react';
-import { quizQuestions1, quizQuestions2 } from './data/QuizData';
+import { quizQuestions } from './data/QuizData';
 import FormIndex from './components/FormIndex';
 
-const len_questions1 = quizQuestions1.length;
-const len_questions2 = quizQuestions2.length;
+const len_questions1 = quizQuestions[0].length;
+const len_questions2 = quizQuestions[1].length;
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ class App extends React.Component {
     this._nextQuestion = this._nextQuestion.bind(this);
     this._nextForm = this._nextForm.bind(this);
   }
-
   _nextQuestion() {
     let currentQuestion = this.state.currentQuestion;
     let len = this.state.len_questions;
@@ -68,8 +67,12 @@ class App extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value })
-  }
+    localStorage.setItem(event.target.name, value);
+    this.setState(
+      { [name]: value })
+  };
+
+  
 
   handleSubmit = (event) => {
     event.preventDefault()

@@ -1,104 +1,105 @@
-export var quizQuestions1 = [
+export var quizQuestions = [
+  [
     {
-        question: "What franchise would you rather play a game from?",
-        answers: [
-            {
-                content: "Halo"
-            },
-            {
-                content: "Pokemon"
-            },
-            {
-                content: "Uncharted"
-            }
-        ]
+      question: "How many bedrooms are there in this house?",
+      answers: [
+        {
+          content: "1"
+        },
+        {
+          content: "2"
+        },
+        {
+          content: "3"
+        }
+      ]
     },
     {
-        question: "Which console would you prefer to play with friends?",
-        answers: [
-            {
-                content: "X-Box"
-            },
-            {
-                content: "Nintendo 64"
-            },
-            {
-                content: "Playstation 1"
-            }
-        ]
+      question: "What does '两个' refer to",
+      answers: [
+        {
+          content: "Kitchen"
+        },
+        {
+          content: "Living room"
+        },
+        {
+          content: "Bathroom"
+        }
+      ]
     },
     {
-        question: "Which of these racing franchises would you prefer to play a game from?",
-        answers: [
-            {
-                content: "Forza"
-            },
-            {
-                content: "Mario Kart"
-            },
-            {
-                content: "Gran Turismo"
-            }
-        ]
+      question: "What does the underlined word '还有' mean",
+      answers: [
+        {
+          content: "And"
+        },
+        {
+          content: "Also"
+        },
+        {
+          content: "Not"
+        }
+      ]
     },
-]
-
-export var quizQuestions2 = [
+  ],
+  [
     {
-        question: "What franchise would you rather play a game from?",
-        answers: [
-            {
-                content: "Halo"
-            },
-            {
-                content: "Pokemon"
-            },
-            {
-                content: "Uncharted"
-            }
-        ]
-    },
-    {
-        question: "Which console would you prefer to play with friends?",
-        answers: [
-            {
-                content: "X-Box"
-            },
-            {
-                content: "Nintendo 64"
-            },
-            {
-                content: "Playstation 1"
-            }
-        ]
+      question: "What does the author do on Monday",
+      answers: [
+        {
+          content: "Go to work"
+        },
+        {
+          content: "Go to school"
+        },
+        {
+          content: "Go to the park"
+        }
+      ]
     },
     {
-        question: "Which of these racing franchises would you prefer to play a game from?",
-        answers: [
-            {
-                content: "Forza"
-            },
-            {
-                content: "Mario Kart"
-            },
-            {
-                content: "Gran Turismo"
-            }
-        ]
+      question: "On what day does the author go to library",
+      answers: [
+        {
+          content: "Mondy"
+        },
+        {
+          content: "Wednesday"
+        },
+        {
+          content: "Friday"
+        }
+      ]
     },
     {
-        question: "Which of these racing franchises would you prefer to play a game from?",
-        answers: [
-            {
-                content: "Forza"
-            },
-            {
-                content: "Mario Kart"
-            },
-            {
-                content: "Gran Turismo"
-            }
-        ]
+      question: "On what day does the author go to see a movie",
+      answers: [
+        {
+          content: "Friday"
+        },
+        {
+          content: "Saturday"
+        },
+        {
+          content: "Sunday"
+        }
+      ]
+    },
+    {
+      question: "What does the word '星期四' mean",
+      answers: [
+        {
+          content: "Tuesday"
+        },
+        {
+          content: "Wednesday"
+        },
+        {
+          content: "Thursday"
+        }
+      ]
     }
+  ]
 ]
 
