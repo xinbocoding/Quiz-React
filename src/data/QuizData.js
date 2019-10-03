@@ -1,17 +1,14 @@
-var quizQuestions = [
+export var quizQuestions1 = [
     {
         question: "What franchise would you rather play a game from?",
         answers: [
             {
-                type: "Microsoft",
                 content: "Halo"
             },
             {
-                type: "Nintendo",
                 content: "Pokemon"
             },
             {
-                type: "Sony",
                 content: "Uncharted"
             }
         ]
@@ -20,15 +17,12 @@ var quizQuestions = [
         question: "Which console would you prefer to play with friends?",
         answers: [
             {
-                type: "Microsoft",
                 content: "X-Box"
             },
             {
-                type: "Nintendo",
                 content: "Nintendo 64"
             },
             {
-                type: "Sony",
                 content: "Playstation 1"
             }
         ]
@@ -37,19 +31,74 @@ var quizQuestions = [
         question: "Which of these racing franchises would you prefer to play a game from?",
         answers: [
             {
-                type: "Microsoft",
                 content: "Forza"
             },
             {
-                type: "Nintendo",
                 content: "Mario Kart"
             },
             {
-                type: "Sony",
                 content: "Gran Turismo"
             }
         ]
     },
 ]
 
-export default quizQuestions;
+export var quizQuestions2 = [
+    {
+        question: "What franchise would you rather play a game from?",
+        answers: [
+            {
+                content: "Halo"
+            },
+            {
+                content: "Pokemon"
+            },
+            {
+                content: "Uncharted"
+            }
+        ]
+    },
+    {
+        question: "Which console would you prefer to play with friends?",
+        answers: [
+            {
+                content: "X-Box"
+            },
+            {
+                content: "Nintendo 64"
+            },
+            {
+                content: "Playstation 1"
+            }
+        ]
+    },
+    {
+        question: "Which of these racing franchises would you prefer to play a game from?",
+        answers: [
+            {
+                content: "Forza"
+            },
+            {
+                content: "Mario Kart"
+            },
+            {
+                content: "Gran Turismo"
+            }
+        ]
+    },
+    {
+        question: "Which of these racing franchises would you prefer to play a game from?",
+        answers: [
+            {
+                content: "Forza"
+            },
+            {
+                content: "Mario Kart"
+            },
+            {
+                content: "Gran Turismo"
+            }
+        ]
+    }
+]
+

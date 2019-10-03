@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Question = props => {
-  if (props.currentForm != props.count) {
+  if (props.currentQuestion !== props.count) {
     return null;
   }
 
@@ -15,7 +15,7 @@ const Question = props => {
           id={`${props.name}-A`}
           value="A"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-A`}>A answer</label>
+        <label htmlFor={`${props.name}-A`}>His work</label>
       </div>
       <div className="item">
         <input type='radio'
@@ -23,7 +23,7 @@ const Question = props => {
           id={`${props.name}-B`}
           value="B"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-B`}>B answer</label>
+        <label htmlFor={`${props.name}-B`}>His family</label>
       </div>
       <div className="item">
         <input type='radio'
@@ -31,7 +31,7 @@ const Question = props => {
           id={`${props.name}-C`}
           value="C"
           onChange={props.handleChange} />
-        <label htmlFor={`${props.name}-C`}>C answer</label>
+        <label htmlFor={`${props.name}-C`}>His Children</label>
       </div>
     </div>
   )

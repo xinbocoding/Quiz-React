@@ -1,21 +1,27 @@
 import React from 'react';
 import Question from './Question';
+import { Text1 } from './Text';
 
 const Form1 = props => {
-  const lenNum = props.len_quesions;
+  if(props.currentForm !== 1){
+    return null;
+  }
+  const lenNum = props.len_questions;
   var elements = [];
   for (let i = 0; i <= lenNum; i++) {
     elements.push(
       <Question
-        currentForm={props.currentForm}
+        currentQuestion={props.currentQuestion}
         count={i}
+        key={i}
         questionName={`Question ${i}`}
-        name={`question-${i}-answers`}
+        name={`form-${props.currentForm}-question-${i}-answers`}
         handleChange={props.handleChange}
       />)
   }
   return (
     <div className="form-group">
+      <Text1 />
       {elements}
     </div>
   )

@@ -1,47 +1,64 @@
 import React from 'react';
-import QuizData from './data/QuizData';
-import Form1 from './components/Form1';
-import Form2 from './components/Form2';
-import Contents from './components/Contents';
+import { quizQuestions1, quizQuestions2 } from './data/QuizData';
+import FormIndex from './components/FormIndex';
 
-const len_quesions = QuizData.length;
+const len_questions1 = quizQuestions1.length;
+const len_questions2 = quizQuestions2.length;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentQuestion: 1,
       currentForm: 1,
-      len_quesions: len_quesions
+      len_questions: len_questions1,
     }
     this.handleChange = this.handleChange.bind(this);
-    this._next = this._next.bind(this);
+    this._nextQuestion = this._nextQuestion.bind(this);
+    this._nextForm = this._nextForm.bind(this);
   }
 
-  _next() {
-    let currentForm = this.state.currentForm;
-    let len = this.state.len_quesions;
-    currentForm = currentForm > len ? len : currentForm + 1;
+  _nextQuestion() {
+    let currentQuestion = this.state.currentQuestion;
+    let len = this.state.len_questions;
+    currentQuestion = currentQuestion > len ? len : currentQuestion + 1;
     this.setState({
-      currentForm: currentForm
+      currentQuestion: currentQuestion
+    })
+  }
+
+  _nextForm() {
+    let currentForm = this.state.currentForm;
+    let currentQuestion = this.state.currentQuestion;
+    if(currentForm >= 2) {
+      currentForm = 2;
+    }else{
+      currentForm += 1;
+      currentQuestion = 1;
+    }
+    this.setState({
+      currentForm: currentForm,
+      len_questions: len_questions2,
+      currentQuestion: currentQuestion
     })
   }
 
   get nextButton(){
-    let currentForm = this.state.currentForm;
-    let len = this.state.len_quesions;
-    if(currentForm < len){
+    let currentQuestion = this.state.currentQuestion;
+    let len = this.state.len_questions;
+    if(currentQuestion < len){
       return (
         <button 
           className="btn btn-primary float-right" 
-          type="button" onClick={this._next}>
+          type="button" onClick={this._nextQuestion}>
         Next
         </button>        
       )
-    } else if(currentForm == len){
+    } else if(currentQuestion === len){
       return (
         <button 
           className="btn btn-primary float-right" 
-          type="button" >
+          type="button" onClick={this._nextForm}>
         Next content
         </button> 
       )
@@ -56,18 +73,18 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const { answer1, answer2 } = this.state
+    const { answer1 } = this.state
     console.log(answer1)
   }
 
   render() {
     return (
       <React.Fragment>
-        <Contents />
         <form onSubmit={this.handleSubmit}>
-          <Form1
+          <FormIndex 
+            currentQuestion={this.state.currentQuestion}
             currentForm={this.state.currentForm}
-            len_quesions={this.state.len_quesions}
+            len_questions={this.state.len_questions}
             handleChange={this.handleChange}
           />
           {this.nextButton}

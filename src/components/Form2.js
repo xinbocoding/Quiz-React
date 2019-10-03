@@ -1,54 +1,30 @@
 import React from 'react';
+import Question from './Question';
+import { Text2 } from './Text';
 
-const Form2 = () => {
-        return (
-            <div>
-                <h2>This is the content of the seconde question</h2>
-                <form method="post">
-                    <ul>
-                        <h3>question 1</h3>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-A" value="A" />
-                            <label htmlFor="question-1-answers-A">A answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-B" value="B" />
-                            <label htmlFor="question-1-answers-B">B answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-C" value="C" />
-                            <label htmlFor="question-1-answers-A">C answer</label>
-                        </div>
-                        <h3>question 2</h3>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-A" value="A" />
-                            <label htmlFor="question-1-answers-A">A answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-B" value="B" />
-                            <label htmlFor="question-1-answers-B">B answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-C" value="C" />
-                            <label htmlFor="question-1-answers-A">C answer</label>
-                        </div>
-                        <h3>question 3</h3>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-A" value="A" />
-                            <label htmlFor="question-1-answers-A">A answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-B" value="B" />
-                            <label htmlFor="question-1-answers-B">B answer</label>
-                        </div>
-                        <div>
-                            <input type='radio' name="question-1-answers" id="question-1-answers-C" value="C" />
-                            <label htmlFor="question-1-answers-A">C answer</label>
-                        </div>
-                    </ul>
-                </form>
-            </div>
-        )
-    }
+const Form2 = props => {
+  if(props.currentForm !== 2){
+    return null;
+  }
+  const lenNum = props.len_questions;
+  var elements = [];
+  for (let i = 0; i <= lenNum; i++) {
+    elements.push(
+      <Question
+        currentQuestion={props.currentQuestion}
+        count={i}
+        key={i}
+        questionName={`Question ${i}`}
+        name={`form-${props.currentForm}-question-${i}-answers`}
+        handleChange={props.handleChange}
+      />)
+  }
+  return (
+    <div className="form-group">
+      <Text2 />
+      {elements}
+    </div>
+  )
+}
 
 export default Form2;
