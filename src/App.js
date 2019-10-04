@@ -1,6 +1,5 @@
 import React from 'react';
-import PreTestPage from './pages/PreTestPage';
-
+import PreTestPage from './components/pages/PreTestPage';
 
 const App = () => {
   return (

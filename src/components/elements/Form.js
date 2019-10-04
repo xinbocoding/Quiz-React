@@ -1,6 +1,7 @@
 import React from 'react';
 import Question from './Question';
 import { Text1 } from './Text';
+import PropTypes from 'prop-types';
 
 const Form = props => {
   if(props.currentForm !== props.formCount){
@@ -26,6 +27,14 @@ const Form = props => {
       {elements}
     </div>
   )
+}
+
+Form.propTypes = {
+  currentForm: PropTypes.number.isRequired,
+  formCount: PropTypes.number.isRequired,
+  len_questions: PropTypes.number.isRequired,
+  quizquestions: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired
 }
 
 export default Form;

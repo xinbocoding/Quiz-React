@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Question = props => {
   if (props.currentQuestion !== props.count) {
@@ -34,6 +35,15 @@ const Question = props => {
       </div>
     </div>
   )
+}
+
+Question.propTypes = {
+  currentQuestion: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
+  questionName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  quizquestions: PropTypes.array.isRequired
 }
 
 export default Question;

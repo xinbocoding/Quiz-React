@@ -1,6 +1,7 @@
 import React from 'react';
-import {quizQuestions} from '../data/QuizData';
-import FormIndex from '../components/FormIndex';
+import PropTypes from 'prop-types';
+import {quizQuestions} from '../../data/QuizData';
+import FormIndex from '../elements/FormIndex';
 
 const len_questions1 = quizQuestions[0].length;
 const len_questions2 = quizQuestions[1].length;
@@ -73,16 +74,10 @@ class PreTestPage extends React.Component {
       { [name]: value })
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const { answer1 } = this.state
-    console.log(answer1)
-  }
-
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <FormIndex 
             currentQuestion={this.state.currentQuestion}
             currentForm={this.state.currentForm}
@@ -96,4 +91,12 @@ class PreTestPage extends React.Component {
   }
 }
 
+PreTestPage.propTypes = {
+  currentQuestion: PropTypes.number,
+  currentForm: PropTypes.number,
+  len_questions: PropTypes.number,
+  handleChange: PropTypes.func,
+  _nextQuestion: PropTypes.func,
+  _nextForm: PropTypes.func
+}
 export default PreTestPage;

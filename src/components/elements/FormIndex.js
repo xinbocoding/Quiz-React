@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form';
-import { quizQuestions } from '../data/QuizData';
+import PropTypes from 'prop-types';
+import { quizQuestions } from '../../data/QuizData';
 
 const FormIndex = props => {
   const quizquestions = quizQuestions;
@@ -25,6 +26,13 @@ const FormIndex = props => {
       {forms}
     </div>
   )
+};
+
+FormIndex.propTypes = {
+  currentForm: PropTypes.number.isRequired,
+  currentQuestion: PropTypes.number.isRequired,
+  len_questions: PropTypes.number.isRequired,
+  handleChange: PropTypes.func.isRequired
 };
 
 export default FormIndex;
